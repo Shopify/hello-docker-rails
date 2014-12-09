@@ -34,5 +34,5 @@ CMD bundle update && \
   sed -i "s/host:.*/host: <%= ENV['DB_PORT_3306_TCP_ADDR'] %>\n  port: <%= ENV['DB_PORT_3306_TCP_PORT'] %>/g" config/database.yml && \ 
   bundle exec rake db:create && \
   bundle exec rake db:migrate && \
-  bundle exec rails s\
+  bundle exec rails s
 ##### ON BOOT #####
