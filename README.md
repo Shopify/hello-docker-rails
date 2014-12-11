@@ -115,7 +115,8 @@ They are pretty easy to understand how to use and I think you are not going to l
 But if your host OS is Mac OS X and you use Eclipse IDE, take a look below.
 
 ```bash
-mount_smbfs //GUEST@(your boot2docker's ip)/var%2Fwww%2Fhtml ~/eclipse/workspace/app_data
+# In case that your boot2docker's ip is 192.168.59.103 and your eclipse's working directory is ~/eclipse/workspace/app_data
+mount_smbfs //GUEST@192.168.59.103/var%2Fwww%2Fhtml ~/eclipse/workspace/app_data
 ```
 
 You can mount the volume where ever you want :)
