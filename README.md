@@ -61,10 +61,12 @@ The boot2docker requires these environmental variables.
 
 We could ```export``` these vars in every time we use boot2docker.
 But This way isn't handy.  
-For example, you could execute the below command to set these in ```.bash_profile```.
+For example, you could execute the below command to set these in ```.bash_profile```.  
+
 ```bash
 echo -e '\n# boot2docker config\nif [ "`boot2docker status`" = "running" ]; then\n    $(boot2docker shellinit 2>/dev/null)\nfi\n' >> ~/.bash_profile
 ```
+
 Try it :)
 
 ### Persistence Database
@@ -83,7 +85,6 @@ docker run -t -d -p 3306:3306 --volumes-from db_data --name db -e MYSQL_ROOT_PAS
 ```
 
 Check the MySQL data is persisted when you rerun new database container after the database container removed :)
-
 
 ### Persistence Application Data
 Like the 'Persistence Database', you may want application data to persist.  
@@ -120,6 +121,7 @@ mount_smbfs //GUEST@192.168.59.103/var%2Fwww%2Fhtml ~/eclipse/workspace/app_data
 ```
 
 You can mount the volume where ever you want :)
+
 
 ## Licence
 
