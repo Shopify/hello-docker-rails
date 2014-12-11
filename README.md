@@ -63,9 +63,27 @@ We could ```export``` these vars in every time we use boot2docker.
 But This way isn't handy.  
 For example, you could execute the below command to set these in ```.bash_profile```.
 ```bash
-echo -e '\n# boot2docker config\nif [ "`boot2docker status`" = "running" ]; then\n    $(boot2docker shellinit 2>/dev/null)\nfi\n' >> ~/.bash_profile.
+echo -e '\n# boot2docker config\nif [ "`boot2docker status`" = "running" ]; then\n    $(boot2docker shellinit 2>/dev/null)\nfi\n' >> ~/.bash_profile
 ```
 Try it :)
+
+### Persistence Database
+To persist database, you need mount a data volume to database container.  
+If not, the data will be gone when you remove database container.  
+__Separate DBMS and DB data!__
+
+There is a example below.
+
+```bash
+# Get up data volume container
+docker run -t -v /var/lib/mysql --name db_data busybox
+
+# Run MySQL Server mounted the volume
+docker run -t -d -p 3306:3306 --volumes-from db_data --name db -e MYSQL_ROOT_PASSWORD=hoge mysql
+```
+
+Check the MySQL data is persisted when you rerun new database container after the database container removed :)
+
 
 ## Licence
 
