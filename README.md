@@ -69,7 +69,7 @@ echo -e '\n# boot2docker config\nif [ "`boot2docker status`" = "running" ]; then
 
 Try it :)
 
-### Persistence Database
+### Persistent Database
 To persist database, you need mount a data volume to database container.  
 If not, the data will be gone when you remove database container.  
 __Separate DBMS and DB data!__
@@ -86,8 +86,8 @@ docker run -t -d -p 3306:3306 --volumes-from db_data --name db -e MYSQL_ROOT_PAS
 
 Check the MySQL data is persisted when you rerun new database container after the database container removed :)
 
-### Persistence Application Data
-Like the 'Persistence Database', you may want application data to persist.  
+### Persistent Application Data
+Like the 'Persistent Database', you may want application data to persist.  
 Yeah, me too. So, how about below.
 
 ```bash
@@ -99,11 +99,11 @@ docker run -i --volumes-from app_data -p 80:3000 --link db:db --name app -t xtit
 ```
 
 That's it!  
-It's very easy way so that it's similar to the 'Persistence Database' :)
+It's very easy way so that it's similar to the 'Persistent Database' :)
 
 
-### Application Data Sharing
-The next step of the 'Persistence Application Data' is sharing the data to your host OS like Windows, Mac OS X and so on. 
+### Sharing Application Data
+The next step of the 'Persistent Application Data' is sharing the data to your host OS like Windows, Mac OS X and so on. 
 A usual solution is using Samba Server, I think.
 
 ```bash
