@@ -85,6 +85,41 @@ docker run -t -d -p 3306:3306 --volumes-from db_data --name db -e MYSQL_ROOT_PAS
 Check the MySQL data is persisted when you rerun new database container after the database container removed :)
 
 
+### Persistence Application Data
+Like the 'Persistence Database', you may want application data to persist.  
+Yeah, me too. So, how about below.
+
+```bash
+# Get up app data volume container
+docker run -t -v /var/www/html --name app_data busybox
+
+# Run App Server mounted the volume
+docker run -i --volumes-from app_data -p 80:3000 --link db:db --name app -t xtity/hello-docker-rails
+```
+
+That's it!  
+It's very easy way so that it's similar to the 'Persistence Database' :)
+
+
+### Application Data Sharing
+The next step of the 'Persistence Application Data' is sharing the data to your host OS like Windows, Mac OS X and so on. 
+A usual solution is using Samba Server, I think.
+
+```bash
+# Run Samba Container 
+docker run --rm -v /usr/local/bin/docker:/docker -v /var/run/docker.sock:/docker.sock svendowideit/samba app_data
+```
+
+When you execute this command, you would see some messages to mount the volume.  
+They are pretty easy to understand how to use and I think you are not going to lost your way.  
+But if your host OS is Mac OS X and you use Eclipse IDE, take a look below.
+
+```bash
+mount_smbfs //GUEST@192.168.59.103/var%2Fwww%2Fhtml ~/IDE/eclipse/workspace/app_data
+```
+
+You can mount the volume where ever you want :)
+
 ## Licence
 
 [Apache License](https://github.com/xtity/hello-docker-rails/blob/master/LICENSE)
