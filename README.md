@@ -125,7 +125,7 @@ You can mount the volume where ever you want :)
 
 ## Licence
 
-[Apache License](https://github.com/xtity/hello-docker-rails/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/xtity/hello-docker-rails/blob/master/LICENSE)
 
 ## Author
 
