@@ -1,7 +1,5 @@
-hello-docker-rails
-==================
-
-This is a Hello Rails project by Docker.  
+# hello-docker-rails
+This is a Docker image project with Rails and MySQL.  
 
 ## Requirement
 ### Installed these
@@ -95,7 +93,7 @@ Yeah, me too. So, how about below.
 docker run -t -v /var/www/html --name app_data busybox
 
 # Run App Server mounted the volume
-docker run -i --volumes-from app_data -p 80:3000 --link db:db --name app -t xtity/hello-docker-rails
+docker run -d --volumes-from app_data -p 80:3000 --link db:db --name app -t xtity/hello-docker-rails
 ```
 
 That's it!  
