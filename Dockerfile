@@ -3,7 +3,7 @@
 FROM ruby
 
 ## APT-GET
-RUN apt-get update && apt-get install -y nodejs --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y vim && apt-get install -y nodejs --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 ## WORKING DIRECTORY
 RUN mkdir -p /var/www/html
