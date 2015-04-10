@@ -17,7 +17,7 @@ EXPOSE 3000
 
 ########## RAILS ENV ##########
 # SET development or test or production
-ENV RAILS_ENV production
+ENV RAILS_ENV development
 ENV RAILS_MYSQL_USERNAME root
 ########## RAILS ENV ##########
 
@@ -39,7 +39,7 @@ CMD if [ ! -f /var/www/html/Gemfile.lock ]; then \
     bundle exec rake db:create && \
     bundle exec rake db:migrate && \
     echo '######################### RUN RAILS SERVER #########################' && \
-    bundle exec rails s; \
+    bundle exec rails s -b 0.0.0.0; \
   else \
     # ON UPDATE
     echo '######################### UPDATE RAILS PROJECT #########################' && \
@@ -50,6 +50,6 @@ CMD if [ ! -f /var/www/html/Gemfile.lock ]; then \
     bundle install --path vendor/bundler && \
     export SECRET_KEY_BASE=`bundle exec rake secret` && \
     echo '######################### RUN RAILS SERVER #########################' && \
-    bundle exec rails s; \
+    bundle exec rails s -b 0.0.0.0; \
   fi
 ########## ON BOOT ##########
