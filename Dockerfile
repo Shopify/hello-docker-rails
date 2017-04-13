@@ -16,7 +16,7 @@ EXPOSE 3000
 
 ########## RAILS ENV ##########
 # SET development or test or production
-ENV RAILS_ENV production
+ENV RAILS_ENV development
 ENV RAILS_MYSQL_USERNAME root
 ########## RAILS ENV ##########
 
@@ -25,8 +25,6 @@ RUN gem install rails rake
 RUN rails new . --skip-bundle --force -d mysql
 
 RUN bundle install --path vendor/bundler
-
-RUN export SECRET_KEY_BASE=`bundle exec rake secret`
 
 ADD config/database.yml ./config/database.yml
 ADD docker-init.sh ./docker-init.sh
