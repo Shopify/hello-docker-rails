@@ -30,5 +30,6 @@ RUN export SECRET_KEY_BASE=`bundle exec rake secret`
 
 ADD config/database.yml ./config/database.yml
 ADD docker-init.sh ./docker-init.sh
+ADD lib/ ./lib/
 
 CMD ["sh", "docker-init.sh"]
