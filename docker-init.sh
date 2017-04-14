@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 rake db:exists && rake db:migrate || rake db:setup
 
