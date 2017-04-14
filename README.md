@@ -1,4 +1,7 @@
 # hello-docker-rails
+[![Docker Automated build](https://img.shields.io/docker/automated/benjamincaldwell/hello-docker-rails.svg)](https://hub.docker.com/r/benjamincaldwell/hello-docker-rails/)
+
+Hello-docker-rails is a docker container for expirement with a rails docker container. This container requires an instance of mysql to connect to.
 
 ## Environment variables
 In addition to the default rails environment variables the following variables might be useful:
