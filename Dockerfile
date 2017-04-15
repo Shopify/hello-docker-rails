@@ -29,6 +29,7 @@ RUN rails new . --skip-bundle --force -d mysql
 RUN bundle install --path vendor/bundler
 
 ADD config/database.yml ./config/database.yml
+ADD db/schema.rb ./db/schema.rb
 ADD docker-init.sh ./docker-init.sh
 ADD lib/ ./lib/
 
