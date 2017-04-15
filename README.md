@@ -13,7 +13,7 @@ In addition to the default rails environment variables the following variables m
 | MYSQL_HOST      | Host where mysql is located                             |                                                                                                                                  |
 | MYSQL_PORT      | Port of mysql                                           | 3306                                                                                                                             |
 | RAILS_ENV       | Rails environment (Note: this container 404s in production) | development                                                                                           |
-| SECRET_KEY_BASE | Used by rails to verify the integrity of signed cookies (Must be changed in production systems) | 3776e39015fb84499097d3288f80eeae4a25c0d527385364dfef52262bb272bf0d95e57730ee4b8b07356f9c9d3339d59609720e1053175b97707b0ce9a18e85 |
+| SECRET_KEY_BASE | Used by rails to verify the integrity of signed cookies (Must be changed in production systems) | 3776e39015fb84499097d... |
 
 ## Getting started using docker
 
