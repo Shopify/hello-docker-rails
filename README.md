@@ -13,13 +13,13 @@ In addition to the default rails environment variables the following variables m
 | MYSQL_HOST      | Host where mysql is located                             |                                                                                                                                  |
 | MYSQL_PORT      | Port of mysql                                           | 3306                                                                                                                             |
 | RAILS_ENV       | Rails environment (Note: this container 404s in production) | development                                                                                           |
-| SECRET_KEY_BASE | Used by rails to verify the integrity of signed cookies (Must be changed in production systems) | 3776e39015fb84499097d... |
+| SECRET_KEY_BASE | Used by rails to verify the integrity of signed cookies (Must be changed in production systems) | 3776e39015fb84499097d3288f80eeae4a25c0d527385364dfef52262bb272bf0d95e57730ee4b8b07356f9c9d3339d59609720e1053175b97707b0ce9a18e85 |
 
 ## Getting started using docker
 
 To use this container with docker first install docker. See [docker documentation for details](https://docs.docker.com/engine/installation/#platform-support-matrix)
 
-```
+``` bash
 #create network
 docker network create hello-rails
 
@@ -34,7 +34,7 @@ Rails application should be available on [`localhost:3000`](http://localhost:300
 
 To clean up delete the hello-rails network and the created containers.
 
-```
+``` bash
 # stop containers if it is running
 docker stop hello-rails-db hello-rails
 
@@ -43,6 +43,18 @@ docker rm hello-rails-db hello-rails
 
 # delete network 
 docker network rm hello-rails
+```
+
+## Using docker-compose
+``` bash
+git clone https://github.com/benjamincaldwell/hello-docker-rails.git
+docker-compose up
+```
+
+To clean up
+```bash
+docker-compose down
+docker-compose rm
 ```
 ## Licence
 
