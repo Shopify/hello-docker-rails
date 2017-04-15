@@ -1,0 +1,19 @@
+version: '2'
+services:
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+  web:
+    image: benjamincaldwell/hello-docker-rails
+    ports:
+      - "3000:3000"
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
+      - MYSQL_HOST=db
+    depends_on:
+      - db
+    # hack so that it "waits" for db to be available
+    restart: on-failure
+
