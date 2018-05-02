@@ -3,7 +3,7 @@
 
 This project was inspired by [xtity/hello-docker-rails](https://github.com/xtity/hello-docker-rails).
 
-Hello-docker-rails is a docker container for expirement with a rails docker container. This container requires an instance of mysql to connect to.
+Hello-docker-rails is a docker container for experimenting with a rails docker container. This container requires an instance of mysql to connect to.
 
 ## Environment variables
 In addition to the default rails environment variables the following variables might be useful:
@@ -43,7 +43,7 @@ docker stop hello-rails-db hello-rails
 # delete containers
 docker rm hello-rails-db hello-rails
 
-# delete network 
+# delete network
 docker network rm hello-rails
 ```
 
