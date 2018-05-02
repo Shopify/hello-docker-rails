@@ -1,5 +1,5 @@
 # hello-docker-rails
-[![Docker Automated build](https://img.shields.io/docker/automated/benjamincaldwell/hello-docker-rails.svg)](https://hub.docker.com/r/benjamincaldwell/hello-docker-rails/)
+[![Docker Automated build](https://img.shields.io/docker/automated/shopify/hello-docker-rails.svg)](https://hub.docker.com/r/shopify/hello-docker-rails/)
 
 This project was inspired by [xtity/hello-docker-rails](https://github.com/xtity/hello-docker-rails).
 
@@ -29,7 +29,7 @@ docker network create hello-rails
 docker run -p 3306 -d --network=hello-rails --network-alias=db -e MYSQL_ROOT_PASSWORD=password --name hello-rails-db mysql
 
 # Run app server
-docker run -it -p 3000:3000 --network=hello-rails -e MYSQL_USER=root -e MYSQL_PASSWORD=password -e MYSQL_HOST=db --name hello-rails benjamincaldwell/hello-docker-rails:latest
+docker run -it -p 3000:3000 --network=hello-rails -e MYSQL_USER=root -e MYSQL_PASSWORD=password -e MYSQL_HOST=db --name hello-rails shopify/hello-docker-rails:latest
 ```
 
 Rails application should be available on [`localhost:3000`](http://localhost:3000)
@@ -49,7 +49,7 @@ docker network rm hello-rails
 
 ## Using docker-compose
 ``` bash
-git clone https://github.com/benjamincaldwell/hello-docker-rails.git
+git clone https://github.com/shopify/hello-docker-rails.git
 docker-compose up
 ```
 
@@ -60,4 +60,4 @@ docker-compose rm
 ```
 ## Licence
 
-[The MIT License (MIT)](https://github.com/benjamincaldwell/hello-docker-rails/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/shopify/hello-docker-rails/blob/master/LICENSE)
